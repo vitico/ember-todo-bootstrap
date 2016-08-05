@@ -1,38 +1,275 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="todolist not-done">
-        <h1>Todos</h1>
-        <input type="text" id="todoText" class="form-control add-todo" placeholder="Add todo">
-        <button id="checkAll" {{action "addTodo" "prueba"}} class="btn btn-success">Mark all as done</button>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
 
-        <hr>
-        <ul id="sortable" class="list-unstyled">
-          {{#each model as |todo|}}
-          <li class="ui-state-default">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox" value="" />{{todo.title}} ---- {{todo.completed}}</label>
-            </div>
-          </li>
-          {{/each}}
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <div class="btn-compose pull-left">
+        <a type="button" class="btn btn-danger navbar-btn" href="#compose" role="tab" data-toggle="tab"> <span class="glyphicon glyphicon-pencil"></span> New Task</a>
+        <a type="button" class="btn btn-default navbar-btn" href="#compose" role="tab" data-toggle="tab">Projects</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#inbox" role="tab" data-toggle="tab">
+                        Todo Today <span class="label label-success">10</span>
+                    </a>
+        </li>
+        <li><a href="#sent-mail" role="tab" data-toggle="tab">Inventory</a>
 
-        </ul>
-        <div class="todo-footer">
-          <strong><span class="count-todos"></span></strong> Items Left
+        </li>
+        <li><a href="#draft" role="tab" data-toggle="tab">Records</a>
+
+        </li>
+        <li><a href="#trash" role="tab" data-toggle="tab">Trash</a>
+
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Username</a>
+
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+
+
+
+<div class="tab-content">
+  <div class="tab-pane active" id="inbox">
+
+    <div class="container">
+      <div class="content-container clearfix">
+        <div class="col-md-12">
+          <h1 class="content-title">Todo Today</h1>
+
+          <input type="search" placeholder="Search Task" class="form-control mail-search" />
+
+          <ul class="mail-list">
+            <li>
+              <a href="">
+                <input type="checkbox" name="test" />
+                <span class="mail-sender">Project Test</span>
+                <span class="mail-subject">Task Name</span>
+                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="todolist">
-        <h1>Already Done</h1>
-        <ul id="done-items" class="list-unstyled">
-          <li>Some item
-            <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button>
-          </li>
 
-        </ul>
+  </div>
+  <div class="tab-pane" id="compose">
+
+    <div class="container">
+      <div class="content-container clearfix">
+        <h1 class="content-title">New Task</h1>
+        <div class="col-md-12">
+          <div class="form-group">
+            <input id="tokenfield" type="text" class="form-control" placeholder="Name" />
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Estimate" />
+          </div>
+          <textarea class="form-control" placeholder="Description"></textarea>
+          <div class="btn-send">
+            <button class="btn btn-success btn-lg"><span class="glyphicon glyphicon-send"></span> Create</button>
+          </div>
+        </div>
       </div>
     </div>
+
+  </div>
+  <div class="tab-pane" id="sent-mail">
+
+    <div class="container">
+      <div class="content-container clearfix">
+        <div class="col-md-12">
+          <h1 class="content-title">Sent Mail</h1>
+
+          <input type="search" placeholder="Search Mail" class="form-control mail-search" />
+
+          <ul class="mail-list">
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tab-pane" id="draft">
+
+    <div class="container">
+      <div class="content-container clearfix">
+        <div class="col-md-12">
+          <h1 class="content-title">Draft</h1>
+
+          <input type="search" placeholder="Search Mail" class="form-control mail-search" />
+
+          <ul class="mail-list">
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="tab-pane" id="trash">
+
+    <div class="container">
+      <div class="content-container clearfix">
+        <div class="col-md-12">
+          <h1 class="content-title">Trash</h1>
+
+          <input type="search" placeholder="Search Mail" class="form-control mail-search" />
+
+          <ul class="mail-list">
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscrsadibers!</span>
+                <span class="mail-message-preview">You have ten more subscriptions click her...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span class="mail-sender">You Tube</span>
+                <span class="mail-subject">New subscribers!</span>
+                <span class="mail-message-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil eveniet ipsum nisi? Eaque odio quae debitis saepe explicabo alias sit tenetur animi...</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

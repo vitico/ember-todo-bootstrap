@@ -14,6 +14,14 @@ export default Ember.Controller.extend({
         alert('No puedo agregar un todo si no se que quieres hacer');
       }
 
+    },
+    onTodoChange(){
+      console.log("x1");
     }
-  }
+
+  },
+  contentDidChange:Ember.observer('model.todos',function(){
+    console.log("x34");
+  }),
+
 });
