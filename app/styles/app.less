@@ -1,0 +1,49 @@
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+// Color variables (appears count calculates by raw css)
+@color0: #dddddd; // Appears 2 times
+@color1: #ffffff; // Appears 2 times
+
+
+
+body {
+	background-color:#EEEEEE;
+}
+.todolist {
+	background-color:@color1;
+	margin-top:30px;
+	padding:20px 20px 10px 20px;
+	h1 {
+		margin:0;
+		padding-bottom:20px;
+		text-align:center;
+	}
+}
+.form-control {
+	border-radius:0;
+}
+li.ui-state-default {
+	background:@color1;
+	border-bottom:1px solid @color0;
+	border:none;
+	&:last-child {
+		border-bottom:none;
+	}
+}
+.todo-footer {
+	background-color:#F4FCE8;
+	margin:0 -20px -10px -20px;
+	padding: 10px 20px;
+}
+#done-items {
+	li {
+		border-bottom:1px solid @color0;
+		padding:10px 0;
+		text-decoration:line-through;
+		&:last-child {
+			border-bottom:none;
+		}
+	}
+}
+#checkAll {
+	margin-top:10px;
+}
